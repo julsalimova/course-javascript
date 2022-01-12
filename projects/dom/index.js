@@ -165,19 +165,21 @@ function collectDOMStat(root) {
       if (child.NodeType === Node.TEXT_NODE) {
         stat.texts++;
       } else if (child.NodeType === Node.ELEMENT_NODE) {
-        stat.tags[child.tagName++];
-      } else {
-        stat.tags[child.tagName] = 1;
-      }
-
-      for (const className of child.classList) {
-        if (className in stat.classes) {
-          stat.classes[className]++;
+        if (child.tagName in stat.tags) {
+          stat.tags[child.tagName]++;
         } else {
-          stat.classes[className] = 1;
+          stat.tags[child.tagName] = 1;
         }
+
+        for (const className of child.classList) {
+          if (className in stat.classes) {
+            stat.classes[className]++;
+          } else {
+            stat.classes[className] = 1;
+          }
+        }
+        scan(child);
       }
-      scan(child);
     }
   }
 
