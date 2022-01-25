@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Яндекс.Карты</title>
+  <!-- <link href="./style.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <div id="map" class="map"></div>
+
+  <div class="FormReview" id="addFormReview">
+    <div class="review-list"></div>
+    <div class="form" data-role="review-form">
+      <h3>Отзыв:</h3>
+      <div class="filed">
+        <input type="text" data-role="review-name" placeholder="Укажите ваше имя" id="myName">
+      </div>
+      <div class="filed">
+        <input type="text" data-role="review-place" placeholder="Укажите место" id="place">
+      </div>
+      <div class="filed">
+        <textarea type="text" data-role="review-text" placeholder="Оставьте отзыв" rows="5" id="review"></textarea>
+      </div>
+
+      <button data-role="review-add" id="load">Добавить</button>
+
+      <span class="form-error"></span>
+    </div>
+
+  </div>
+</body>
+
+</html>
